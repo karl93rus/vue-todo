@@ -1,3 +1,4 @@
 export default {
-  signUpVisibility: false
+  signUpVisibility: false,
+  itemPopupVisibility: false,
 }

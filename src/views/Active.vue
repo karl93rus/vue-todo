@@ -1,5 +1,6 @@
 <template>
   <div class="active-wrapper">
+    <item-popup v-if="itemPopupVisibility"></item-popup>
     <div v-for="(item, index) of itemsArray" :key="index">
       <todo-item :iData="itemData"></todo-item>
     </div>
@@ -8,10 +9,12 @@
 
 <script>
 import TodoItem from '@/components/TodoItem.vue';
+import ItemPopup from '@/components/ItemPopup.vue';
 
 export default {
   components: {
     TodoItem,
+    ItemPopup,
   },
   data() {
     return {
@@ -20,6 +23,11 @@ export default {
         itemHeader: 'Header',
         itenText: 'Content',
       }
+    }
+  },
+  computed: {
+    itemPopupVisibility() {
+      return this.$store.getters['UiState/getItemPopupVisibility'];
     }
   }
 }

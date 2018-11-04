@@ -4,5 +4,11 @@ export default {
   },
   closeSignUp({commit}) {
     commit('CLOSE_SIGN_UP');
-  }
+  },
+  showItemPOpup({commit}) {
+    commit('SHOW_ITEM_POPUP');
+  },
+  closeItemPOpup({commit}) {
+    commit('CLOSE_ITEM_POPUP');
+  },
 }

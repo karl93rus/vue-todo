@@ -54,7 +54,7 @@ export default {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, .5);
+    background-color: $dark-bcg;
     border: 1px solid $main-color;
     border-radius: 15px;
     box-shadow: 0 0 12px $main-color * .8;
