@@ -1,0 +1,26 @@
+// COLORS
+$main-bcg: #fff;
+$main-color: #ff9d00;
+$secondary-color: #2c2747;
+$text-color-light: #fff;
+$text-color-dark: #333;
+
+
+
+// SIZING
+$heading-big: 30px;
+$text-size: 22px;
+$text-size-small: 18px;
+
+
+
+
+// ITEMS
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
