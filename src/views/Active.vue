@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      itemsArray: [1, 2, 3, 4],
+      itemsArray: [1, 2, 3, 4, 5, 6, 7],
       itemData: {
         itemHeader: 'Header',
         itenText: 'Content',
@@ -34,5 +34,6 @@ export default {
     margin: 0 auto;
     padding: 3px 0;
     background-color: $main-bcg;
+    overflow-y: auto;
   }
 </style>

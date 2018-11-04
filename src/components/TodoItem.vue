@@ -34,6 +34,10 @@ export default {
   margin: 6px 0;
   box-shadow: 0px 3px 2px rgb(122, 122, 122);
   border-radius: 8px;
+  transition: .3s;
+  &:hover {
+    box-shadow: 0px 3px 2px $main-color;
+  }
   .item-content {
     cursor: pointer;
     .item-header {
@@ -54,6 +58,10 @@ export default {
       transform: translateY(-50%);
       margin-left: 30px;
       cursor: pointer;
+      transition: .3s;
+      &:hover {
+        transform: translateY(-66%);
+      }
     }
   }
 }

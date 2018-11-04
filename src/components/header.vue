@@ -35,7 +35,6 @@ export default {
   p {
     height: 50px;
     margin: 0;
-    // margin-left: 35px;
     line-height: 50px;
     padding: 0;
     font-size: $heading-big;

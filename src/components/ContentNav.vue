@@ -1,9 +1,9 @@
 <template>
   <div class="main-content-top">
     <ul>
-      <li>ADD</li>
-      <li>ACTIVE</li>
-      <li>ARCHIVE</li>
+      <li><p>ADD</p></li>
+      <li><p>ACTIVE</p></li>
+      <li><p>ARCHIVE</p></li>
     </ul>
   </div>
 </template>
@@ -28,10 +28,20 @@ export default {
     li {
       display: inline-block;
       height: 50px;
-      line-height: 50px;
+      line-height: 40px;
       margin-right: 25px;
       color: $main-color;
       cursor: pointer;
+      p {
+        width: 0%;
+        border-bottom: 3px solid $main-color;
+        height: 32px;
+        white-space: nowrap;
+        transition: .5s;
+        &:hover {
+          width: 80%;
+        }
+      }
     }
   }
 }
