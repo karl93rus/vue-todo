@@ -25,7 +25,6 @@ export default {
   },
   async created() {
     await this.loadItems();
-    console.log('Items getter on created()', this.allItems);
   },
   computed: {
     allItems() {

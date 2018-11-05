@@ -2,10 +2,10 @@
   <div @click.self="closePopup" class="ip-wrapper">
     <div class="ip-content">
       <div class="ip-content-header">
-        <p>Header</p>
+        <p>{{ itemData.header }}</p>
       </div>
       <div class="ip-content-desc">
-        <p>Description</p>
+        <p>{{ itemData.content }}</p>
       </div>
     </div>
   </div>
@@ -13,6 +13,11 @@
 
 <script>
 export default {
+  computed: {
+    itemData() {
+      return this.$store.getters['Items/getCurrentItem'];
+    }
+  },
   methods: {
     closePopup() {
       this.$store.dispatch('UiState/closeItemPOpup');

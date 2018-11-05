@@ -17,15 +17,6 @@ export default {
     ItemPopup,
   },
   props: ['data'],
-  data() {
-    return {
-      itemsArray: [1, 2, 3, 4, 5, 6, 7],
-      itemData: {
-        itemHeader: 'Header',
-        itenText: 'Content',
-      }
-    }
-  },
   computed: {
     itemPopupVisibility() {
       return this.$store.getters['UiState/getItemPopupVisibility'];

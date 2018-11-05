@@ -4,5 +4,8 @@ export default {
   },
   SET_CURRENT_ITEM(state, item) {
     state.currentItem = item;
+  },
+  CLEAR_ITEMS(state) {
+    state.allItems = [];
   }
 }

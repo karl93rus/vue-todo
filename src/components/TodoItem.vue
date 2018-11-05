@@ -21,6 +21,7 @@ export default {
   },
   methods: {
     openDetails() {
+      this.$store.dispatch('Items/loadCurrent', this.iData);
       this.$store.dispatch('UiState/showItemPOpup');
     }
   }
