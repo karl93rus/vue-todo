@@ -1,7 +1,7 @@
 <template>
   <div class="main-content-top">
     <ul>
-      <li><p>ADD</p></li>
+      <li @click="openAdd"><p>ADD</p></li>
       <li><p>ACTIVE</p></li>
       <li><p>ARCHIVE</p></li>
     </ul>
@@ -10,7 +10,11 @@
 
 <script>
 export default {
-
+  methods: {
+    openAdd() {
+      this.$store.dispatch('UiState/openAdd');
+    }
+  }
 }
 </script>
 

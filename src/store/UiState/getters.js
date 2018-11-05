@@ -5,4 +5,7 @@ export default {
   getItemPopupVisibility(state) {
     return state.itemPopupVisibility;
   },
+  getAddItemVisibility(state) {
+    return state.addItemVisibility;
+  }
 }

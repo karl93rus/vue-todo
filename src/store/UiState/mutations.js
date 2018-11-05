@@ -10,5 +10,11 @@ export default {
   },
   CLOSE_ITEM_POPUP(state) {
     state.itemPopupVisibility = false;
+  },
+  OPEN_ADD(state) {
+    state.addItemVisibility = true;
+  },
+  CLOSE_ADD(state) {
+    state.addItemVisibility = false;
   }
 }

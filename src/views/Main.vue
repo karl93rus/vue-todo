@@ -1,6 +1,7 @@
 <template>
   <div class="main">
     <sign-up v-if="signUpVisibility"></sign-up>
+    <add-item v-if="addVisibility"></add-item>
     <div class="main-content">
       <content-nav></content-nav>
       <active :data="allItems"></active>
@@ -12,6 +13,7 @@
 import SignUp from '@/components/SignUp.vue';
 import ContentNav from '@/components/ContentNav.vue';
 import Active from './Active.vue';
+import AddItem from '@/components/AddItem.vue';
 import axios from 'axios';
 
 export default {
@@ -19,6 +21,7 @@ export default {
     SignUp,
     ContentNav,
     Active,
+    AddItem,
   },
   async created() {
     await this.loadItems();
@@ -31,6 +34,9 @@ export default {
     signUpVisibility() {
       return this.$store.getters['UiState/getSignUpVisibility'];
     },
+    addVisibility() {
+      return this.$store.getters['UiState/getAddItemVisibility'];
+    }
   },
   methods: {
     loadItems() {
