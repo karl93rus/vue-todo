@@ -1,8 +1,8 @@
 <template>
   <div class="active-wrapper">
     <item-popup v-if="itemPopupVisibility"></item-popup>
-    <div v-for="(item, index) of itemsArray" :key="index">
-      <todo-item :iData="itemData"></todo-item>
+    <div v-for="(item, index) of data" :key="index">
+      <todo-item :iData="data[index]"></todo-item>
     </div>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
     TodoItem,
     ItemPopup,
   },
+  props: ['data'],
   data() {
     return {
       itemsArray: [1, 2, 3, 4, 5, 6, 7],

@@ -3,7 +3,7 @@
     <sign-up v-if="signUpVisibility"></sign-up>
     <div class="main-content">
       <content-nav></content-nav>
-      <router-view></router-view>
+      <active :data="allItems"></active>
     </div>
   </div>
 </template>
@@ -11,15 +11,30 @@
 <script>
 import SignUp from '@/components/SignUp.vue';
 import ContentNav from '@/components/ContentNav.vue';
+import Active from './Active.vue';
+import axios from 'axios';
 
 export default {
   components: {
     SignUp,
     ContentNav,
+    Active,
+  },
+  async created() {
+    await this.loadItems();
+    console.log('Items getter on created()', this.allItems);
   },
   computed: {
+    allItems() {
+      return this.$store.getters['Items/getAllItems'];
+    },
     signUpVisibility() {
       return this.$store.getters['UiState/getSignUpVisibility'];
+    },
+  },
+  methods: {
+    loadItems() {
+      this.$store.dispatch('Items/loadAllItems');
     }
   }
 }

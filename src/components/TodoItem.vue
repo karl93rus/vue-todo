@@ -1,8 +1,8 @@
 <template>
   <div @click="openDetails" class="item-wrapper">
     <div class="item-content">
-      <p class="item-header">{{ iData.itemHeader }}</p>
-      <p class="item-text">{{ iData.itenText }}</p>
+      <p class="item-header">{{ iData.header }}</p>
+      <p class="item-text">{{ iData.content }}</p>
     </div>
     <div class="item-controls">
       <img src="../assets/edit.png" alt="edit">
@@ -21,7 +21,6 @@ export default {
   },
   methods: {
     openDetails() {
-      console.log('OPEN');
       this.$store.dispatch('UiState/showItemPOpup');
     }
   }
