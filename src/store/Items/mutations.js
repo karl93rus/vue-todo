@@ -7,5 +7,8 @@ export default {
   },
   CLEAR_ITEMS(state) {
     state.allItems = [];
+  },
+  DELETE_ITEM(state, index) {
+    state.allItems.splice(index, 1);
   }
 }

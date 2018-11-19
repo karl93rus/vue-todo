@@ -1,12 +1,12 @@
 <template>
-  <div @click="openDetails" class="item-wrapper">
+  <div class="item-wrapper">
     <div class="item-content">
-      <p class="item-header">{{ iData.header }}</p>
+      <p @click="openDetails" class="item-header">{{ iData.header }}</p>
       <p class="item-text">{{ iData.content }}</p>
     </div>
     <div class="item-controls">
       <img src="../assets/edit.png" alt="edit">
-      <img src="../assets/delete.png" alt="edit">
+      <img @click.self="deleteItem({  })" src="../assets/delete.png" alt="edit">
     </div>
   </div>
 </template>
@@ -21,8 +21,14 @@ export default {
   },
   methods: {
     openDetails() {
+      console.log(this.iData);
       this.$store.dispatch('Items/loadCurrent', this.iData);
       this.$store.dispatch('UiState/showItemPOpup');
+    },
+    deleteItem() {
+      console.log('Delete METHOD IN');
+      this.$store.dispatch('Items/deleteItem', this.iData._id);
+      console.log('Delete METHOD DELETED!');
     }
   }
 }
@@ -45,11 +51,12 @@ export default {
     box-shadow: 0px 3px 2px $main-color;
   }
   .item-content {
-    cursor: pointer;
     .item-header {
       margin: 2px;
       font-size: 1.25rem;
       font-weight: bold;
+      color: $main-color;
+      cursor: pointer;
     }
     .item-text {
       margin: 2px;
